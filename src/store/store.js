@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import usersReducer from "./users/usersSlice";
 
 export default configureStore({
-    middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
     }),
-    reducer: {
-        
-    }
-})
+  reducer: {
+    users: usersReducer,
+  },
+});
